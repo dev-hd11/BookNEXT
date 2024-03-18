@@ -4,8 +4,8 @@
 
 # Tools used
 
-1.Next.js
-2.React.js
-3.Mongoose
-4.UUID 4
-5.Tailwind CSS
+1. Next.js
+2. React.js
+3. Mongoose
+4. UUID 4
+5. Tailwind CSS
