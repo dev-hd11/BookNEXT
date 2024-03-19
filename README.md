@@ -6,9 +6,9 @@ An app to manage a book store's or publish house's sales. Built with Next.js
 
 - User friendly UI
 - Sale records manager
-- Sale viewer
+- Sale calculator
 - Book manager
-- More features coming soon
+- And many more features!
 
 ## Installation :
 
