@@ -5,7 +5,6 @@ import Link from 'next/link'
 const fetchUser = async (callback) => {
     let a = await fetch('./api/user')
     let data = await a.json()
-    console.log(data)
     callback(data.user)
 }
 
@@ -18,8 +17,8 @@ const Navigation = () => {
 
 
     return (
-        <div className='flex flex-col gap-8 w-1/3 overflow-hidden fixed bg-black left-0 bottom-0 top-0 min-h-[92vh] border-r-2'>
-            <h1 className='font-aladin tracking-[0.09rem] text-lg font-bold p-5 border-b-2 flex gap-2 items-center'><span className="text-white p-3 rounded-full bg-stone-700 material-symbols-outlined">
+        <div className='flex flex-col gap-8 w-1/3 overflow-hidden fixed bg-black left-0 top-0 min-h-[92vh] border-r-2'>
+            <h1 className='font-aladin tracking-[0.09rem] text-2xl font-bold p-5 border-b-2 flex gap-2 items-center'><span className="text-white p-3 rounded-full bg-stone-700 material-symbols-outlined">
                 auto_stories
             </span>BookNEXT</h1>
             <Link href={'/'} className='w-fit'><div className="user flex items-center m-3">

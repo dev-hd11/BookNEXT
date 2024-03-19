@@ -10,7 +10,6 @@ export default function Home() {
   const fetchUser = async (callback) => {
     let a = await fetch('./api/user')
     let data = await a.json()
-    console.log(data)
     callback(data.user)
   }
 
@@ -38,7 +37,7 @@ export default function Home() {
 
   return (
     <div className="screen flex flex-col items-center">
-      <h1 className="font-extrabold text-5xl w-full text-center font-aboreto p-[10vh] border-b-2 h-fit">Welcome back, <span style={{'fontFamily' : 'Fleur De Leah'}}>{user}</span></h1>
+      <h1 className="font-extrabold text-4xl w-full text-center font-aboreto p-[10vh] border-b-2 h-fit">Welcome back, <span style={{'fontFamily' : 'Oleo Script Swash Caps'}}>{user}</span></h1>
       <div className=" my-auto bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 rounded-3xl flex items-center justify-center w-[60%]">
         <div className="total p-1 rounded-3xl bg-gradient-to-br from-slate-600 via-slate-800 to-black border-2 w-full">
           <div className="font-outline text-xl flex justify-between text-red-600 w-full font-bold p-2 border-b-2">
