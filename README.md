@@ -12,7 +12,17 @@ An app to manage a book store's or publish house's sales. Built with Next.js
 
 ## Installation :
 
-Comming soon...
+1. Install & setup MongoDB
+2. Download the latest version
+3. Change the `user.json` file's content to :
+```json
+{
+  "user" : "[store name goes here]"
+}
+```
+4. Run `npm i`
+5. Run `npm run dev`
+6. The app is ready!
 
 ## Dependencies :
 
