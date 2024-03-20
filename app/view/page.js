@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 const ViewSales = () => {
   const [books, setBooks] = useState([])
+  const [sales, setSales] = useState(0)
   let count = 1
 
   useEffect(() => {
@@ -12,8 +13,14 @@ const ViewSales = () => {
       let data = await a.json()
       setBooks(data)
     }
+    const fetchSale = async () => {
+      let a = await fetch('./api/sale')
+      let data = await a.json()
+      setSales(data.sale)
+    }
 
     fetchData();
+    fetchSale()
   }, [])
 
   return (
@@ -50,6 +57,8 @@ const ViewSales = () => {
       </table>}
 
       {books.length == 0 && <div className='text-base m-auto'> No Books </div>}
+
+      <p className='font-serif font-bold text-xl mx-auto flex items-center justify-center p-4 my-3 border-y-2 w-full'>Lifetime Sales: ${sales}</p>
     </div>
   )
 }

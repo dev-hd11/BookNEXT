@@ -13,13 +13,22 @@ export default function Home() {
     callback(data.user)
   }
 
-  useEffect(() => {
-    fetchUser(setUser)
-    
-    if (sales >= 50_000) {
+  const fetchSale = async (callback) => {
+    const date = new Date()
+    const dateStr = `${date.getFullYear()}-${date.getMonth()}`
+    let a =await fetch('/api/sale', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({date: dateStr})
+    })
+    let data = await a.json()
+
+    if (data.sale >= 100_000) {
       setRemark('Good')
       setColor('text-green-500')
-    } else if (sales >= 10_000) {
+    } else if (data.sale >= 50_000) {
       setRemark('Optimal')
       setColor('text-white')
     } else {
@@ -27,11 +36,18 @@ export default function Home() {
       setColor('text-red-600')
     }
 
-    if (sales.toString().length > 6) {
-      setSales((sales / 1_000_000).toString() + 'M')
-    } else if (sales.toString().length > 4) {
-      setSales((sales / 1_000).toString() + 'K')
+    if (data.sale > 999_000) {
+      callback((data.sale / 1_000_000).toFixed(3).toString() + 'M')
+    } else if (data.sale > 9_000) {
+      callback((data.sale / 1_000).toFixed(3).toString() + 'K')
+    } else {
+      callback(data.sale)
     }
+  }
+
+  useEffect(() => {
+    fetchUser(setUser)
+    fetchSale(setSales)
   }, [])
 
 
@@ -41,10 +57,10 @@ export default function Home() {
       <div className=" my-auto bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 rounded-3xl flex items-center justify-center w-[60%]">
         <div className="total p-1 rounded-3xl bg-gradient-to-br from-slate-600 via-slate-800 to-black border-2 w-full">
           <div className="font-outline text-xl flex justify-between text-red-600 w-full font-bold p-2 border-b-2">
-            <p>Total Sales</p>
+            <p className={color}>Monthly Sales</p>
             <p className={color}>{remark}</p>
           </div>
-          <div className="flex font-outline text-5xl items-center justify-center text-red-600 px-[20vh] py-[10vh]">${sales}</div>
+          <div className={"flex font-outline text-5xl items-center justify-center px-[20vh] py-[10vh] " + color}> ${sales}</div>
         </div>
       </div>
     </div>
