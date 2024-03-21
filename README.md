@@ -31,4 +31,4 @@ An app to manage a book store's or publish house's sales. Built with Next.js
 
 ## Versions :
 
-None
+BookNEXT 1 - This release has got basic features such as managing books, managing sales and minimalistic sales data along with and user-friendly interface.
