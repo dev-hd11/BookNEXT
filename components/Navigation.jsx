@@ -1,6 +1,9 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image';
+import github from '@/image.png';
+
 
 const fetchUser = async (callback) => {
     let a = await fetch('./api/user')
@@ -27,40 +30,58 @@ const Navigation = () => {
                     stroke="bold"
                     state="in-reveal"
                     colors="primary:#ffffff,secondary:#ffffff"
-                    style={{width: 35, height: 35}}>
+                    style={{ width: 35, height: 35 }}>
 
                 </lord-icon>
             </span>BookNEXT</h1>
-            <Link href={'/'} className='w-fit'><div className="user flex items-center m-3">
-                <span className="material-symbols-outlined mx-2">
-                    account_circle
-                </span><span className='font-semibold text-base'>{user}</span>
+            <Link href={'/'} className='w-fit'><div className="user flex items-center m-3 gap-2">
+                <lord-icon
+                    src="https://cdn.lordicon.com/zfmcashd.json"
+                    trigger="in"
+                    delay="1500"
+                    state="in-reveal"
+                    colors="primary:#c71f16,secondary:#c7166f,tertiary:#ffffff,quaternary:#ffffff"
+                    style={{ width: 60, height: 60 }}>
+                </lord-icon><span className='font-semibold text-base'>{user}</span>
             </div></Link>
             <div className="buttons flex flex-col">
-                <Link href={'/book'}><div className='btn'><lord-icon
-                    src="https://cdn.lordicon.com/wzwygmng.json"
-                    trigger="morph"
-                    state="hover-unfold"
-                    colors="primary:#ffffff,secondary:#ffffff"
-                    style={{ width: 35, height: 35 }}
-                >
-                </lord-icon><span>Add Book</span></div></Link>
-                <Link href={'/sale'}><div className='btn'><lord-icon
-                    src="https://cdn.lordicon.com/zrkkrrpl.json"
-                    trigger="morph"
-                    stroke="bold"
-                    state="hover-swirl"
-                    colors="primary:#ffffff,secondary:#ffffff"
-                    style={{ width: 35, height: 35 }}>
-                </lord-icon>
-                    <span>Add Sales</span></div></Link>
-                <Link href={'/view'}><div className='btn'><lord-icon
-                    src="https://cdn.lordicon.com/zawvkqfy.json"
-                    trigger="morph"
-                    stroke="bold"
-                    colors="primary:#ffffff"
-                    style={{ width: 35, height: 35 }}>
-                </lord-icon><span>View Sales</span></div></Link>
+                <div>
+                    <Link href={'/book'}><div className='btn'><lord-icon
+                        src="https://cdn.lordicon.com/wzwygmng.json"
+                        trigger="morph"
+                        state="hover-unfold"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style={{ width: 35, height: 35 }}
+                    >
+                    </lord-icon><span>Add Book</span></div></Link>
+                    <Link href={'/sale'}><div className='btn'><lord-icon
+                        src="https://cdn.lordicon.com/zrkkrrpl.json"
+                        trigger="morph"
+                        stroke="bold"
+                        state="hover-swirl"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style={{ width: 35, height: 35 }}>
+                    </lord-icon>
+                        <span>Add Sales</span></div></Link>
+                    <Link href={'/view'}><div className='btn'><lord-icon
+                        src="https://cdn.lordicon.com/zawvkqfy.json"
+                        trigger="morph"
+                        stroke="bold"
+                        colors="primary:#ffffff"
+                        style={{ width: 35, height: 35 }}>
+                    </lord-icon><span>View Sales</span></div></Link>
+                </div>
+                <div>
+                    <a className='btn' href="https://github.com/dev-hd11/BookNEXT.git">
+                        <Image
+                            src={github}
+                            alt="Logo"
+                            width={30} 
+                            height={30} 
+                        />
+                        <span>Github</span>
+                    </a>
+                </div>
             </div>
         </div>
     )
