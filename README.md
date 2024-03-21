@@ -1,6 +1,6 @@
 # BookNEXT App
 
-An app to manage a book store's or publish house's sales. Built with Next.js 
+An app to manage a book store's or publishing house's sales. Built with Next.js 
 
 ## Features :
 
