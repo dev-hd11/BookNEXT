@@ -1,7 +1,20 @@
 {
   "name": "booknext",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private" :true,
+  "author": {
+    "name": "Himank Deka"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-hd11/BookNEXT.git"
+  },
+  "description": "BookNext is a book management system with descent features & functionalities. It is built with Next.js and MongoDB",
+  "engines": {
+    "node": ">=20.11.1",
+    "npm": ">=10.0.0"
+  },
+  "readme": "./README.md",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
