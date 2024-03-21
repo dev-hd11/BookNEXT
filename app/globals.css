@@ -7,7 +7,7 @@
     @apply bg-black text-white
   }
   .btn {
-    @apply  text-slate-600 flex p-4 w-[90%] text-lg font-semibold mx-3 rounded-xl hover:bg-slate-700 hover:text-slate-200 transition-all duration-300 items-center
+    @apply  text-slate-600 flex p-4 w-[90%] text-lg gap-5 font-semibold mx-3 rounded-xl hover:bg-slate-700 hover:text-slate-200 transition-all duration-300 items-center
   }
 
   .screen {
