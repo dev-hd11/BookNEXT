@@ -1,7 +1,7 @@
 # BookNEXT App
 
-An app to manage a book store's or publishing house's sales. Built with Next.js 
-**Warning: This project is deprecated**
+An app to manage a book store's or publishing house's sales. Built with Next.js <br>
+### Warning: This project is deprecated
 
 ## Features :
 
